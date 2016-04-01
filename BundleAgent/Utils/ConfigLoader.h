@@ -26,7 +26,7 @@
 
 #include <string>
 
-#include "ExternTools/inih/cpp/INIReader.h"
+#include "vendor/inih/cpp/INIReader.h"
 
 /**
  * CLASS ConfigLoader
