@@ -32,8 +32,18 @@
 #include <fstream>
 #include <string>
 #include <mutex>
+#include <chrono>
 #include "Utils/Logstream.h"
 #include "Utils/ConfigLoader.h"
+
+using std::chrono::time_point;
+using std::chrono::system_clock;
+using std::chrono::duration;
+
+#define INIT_CHRONO() std::chrono::time_point<std::chrono::system_clock> start, end; 
+#define START_CHRONO() start = std::chrono::system_clock::now()
+#define END_CHRONO() std::chrono::duration<double> elapsed_seconds = std::chrono::system_clock::now()-start 
+#define GET_CHRONO_SECS() elapsed_seconds.count()
 
 /**
  * CLASS Logger
